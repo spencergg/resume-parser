@@ -1,0 +1,3 @@
+*.cs linguist-language=Python
+*.go linguist-language=Python
+*.php linguist-language=Python
