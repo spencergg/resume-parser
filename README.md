@@ -5,6 +5,7 @@ ResumeSDK是业界领先的智能简历解析、简历分析和简历评估服�
 * 官网：http://www.resumesdk.com/
 * DEMO：http://www.resumesdk.com/demo-parser.html
 * 开发文档：http://www.resumesdk.com/docs/rs-parser.html
+* 阿里云接口服务：https://market.aliyun.com/products/57124001/cmapi034316.html#sku=yuncode2831600001
 
 技术特色 - Features
 ---
