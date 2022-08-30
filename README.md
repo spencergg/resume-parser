@@ -2,21 +2,21 @@ ResumeSDK简历解析 - Resume Parser for Both Chinese and English CV
 ========
 
 ResumeSDK是业界领先的智能简历解析、简历分析和简历评估服务厂商，将NLP/ML/DL应用于简历相关业务场景，让AI赋能招聘。
-* 官网：http://www.resumesdk.com/
-* DEMO：http://www.resumesdk.com/demo-parser.html
-* 开发文档：http://www.resumesdk.com/docs/rs-parser.html
+* 官网：https://www.resumesdk.com/
+* DEMO：https://www.resumesdk.com/demo-parser.html
+* 接口文档：https://www.resumesdk.com/docs/rs-parser.html
 * 阿里云接口服务：https://market.aliyun.com/products/57124001/cmapi034316.html#sku=yuncode2831600001
 
 除解析之外，还有如下一些功能：
-* 简历查重：http://www.resumesdk.com/deduper.html
-* 人岗匹配：http://www.resumesdk.com/matcher.html
-* 人才搜索：http://www.resumesdk.com/searcher.html
+* 简历查重：https://www.resumesdk.com/deduper.html
+* 人岗匹配：https://www.resumesdk.com/matcher.html
+* 人才搜索：https://www.resumesdk.com/searcher.html
 
 技术特色 - Features
 ---
 
 * 支持对中文和英文简历的解析；
-* 支持对超过150多个简历字段的提取；
+* 支持对超过170多个简历字段的提取；
 * 支持对pdf/doc/rtf/jpg等超过40种不同格式简历的解析，囊括所有常见的简历格式；
 * 不仅支持对各大网站模板简历，也支持对自由格式简历的解析，基于ML/DL的技术架构拥有强大的泛化能力；
 * 拥有百万量级的测试样本数据以及千万级的高准确且丰富的实体词典，基于词典加机器模型的算法，让识别效果更加精准；
@@ -57,7 +57,7 @@ def test_parser(url, fname, uid, pwd):
 解析结果
 ---
 
-http://www.resumesdk.com/docs/rs-parser.html#resumeStruct
+https://www.resumesdk.com/docs/rs-parser.html#resumeStruct
 
 1. 基本信息
    1. 基本信息——基础信息
