@@ -1,7 +1,7 @@
 ResumeSDK简历解析 - Resume Parser for Both Chinese and English CV
 ========
 
-ResumeSDK是业界领先的智能简历解析、简历分析和简历评估服务厂商，将NLP/ML/DL应用于简历相关业务场景，让AI赋能招聘。(注：ResumeSDK简历解析为商业产品，可以提供免费调用，非开源项目）
+ResumeSDK是业界领先的智能简历解析、简历分析和简历评估服务厂商，将NLP/ML/DL应用于简历相关业务场景，让AI赋能招聘。(注：ResumeSDK简历解析为商业产品，可以提供免费调用次数，非开源项目）
 * 官网：https://www.resumesdk.com/
 * DEMO：https://www.resumesdk.com/demo-parser.html
 * 接口文档：https://www.resumesdk.com/docs/rs-parser.html
