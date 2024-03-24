@@ -1,4 +1,4 @@
-﻿package main
+package main
 
 import (
     "bytes"
@@ -13,15 +13,14 @@ import (
 )
 
 type Input struct {
-    Uid int `json:"uid"`
-    Pwd string `json:"pwd"`
     File_name string `json:"file_name"`
     File_cont string `json:"file_cont"`
+    Need_avatar int `json:"need_avatar"`
 }
 
 // Creates http request
-func createRequest(url string, uid int, pwd string, path string) (*http.Request, error) {
-    file, err := os.Open(path)
+func createRequest(url string, uid int, pwd string, fname string) (*http.Request, error) {
+    file, err := os.Open(fname)
     if err != nil {
         return nil, err
     }
@@ -31,27 +30,29 @@ func createRequest(url string, uid int, pwd string, path string) (*http.Request,
     reader := bufio.NewReader(file)
     content, _ := ioutil.ReadAll(reader)
 
-    // Encode as base64.
+    // Create Request
     file_cont := base64.StdEncoding.EncodeToString(content)
-    input := Input{Uid: uid, Pwd: pwd, File_name: path, File_cont: file_cont}
-    jsonValue, err := json.Marshal(input)
-    if err != nil {
-        fmt.Println("Umarshal failed:", err)
-        return nil, err
-    }
+    input := Input{File_name: fname, File_cont: file_cont, Need_avatar: 0}
+    jsonValue, _ := json.Marshal(input)
     req, err := http.NewRequest("POST", url, bytes.NewBuffer(jsonValue))
+
+    // Set headers
     req.Header.Set("Content-Type", "application/json")
+    uid_str := fmt.Sprintf("%d", uid)
+    req.Header.Set("uid", uid_str)
+    req.Header.Set("pwd", pwd)
     return req, err
 }
 
-func test_parser(url string, uid int, pwd string, file_path string) {
-    request, err := createRequest(url, uid, pwd, file_path)
+func testParser(url string, uid int, pwd string, fname string) {
+    request, err := createRequest(url, uid, pwd, fname)
     if err != nil {
         log.Fatal(err)
     }
 
     client := &http.Client{}
     resp, err := client.Do(request)
+    fmt.Println("http status code: ", resp.StatusCode)
     if err != nil {
         log.Fatal(err)
     } else {
@@ -66,9 +67,9 @@ func test_parser(url string, uid int, pwd string, file_path string) {
 }
 
 func main() {
-    url := "http://www.resumesdk.com/api/parse"
-    uid := 123456 	// 替换为你的用户名（int格式）
-    pwd	:= "123abc"	// 替换为你的密码（str格式）
-    fname := "D:/test_input/resume.docx"	// 替换为你的简历文件名，确保后缀名正确
-    test_parser(url, uid, pwd, fname) 
+    url := "http://www.resumesdk.com/api/parse"      // 接口地址，也可以用https
+    uid := 123456    // 替换为你的用户名（int格式）
+    pwd  := "123abc" // 替换为你的密码（str格式）
+    fname := "D:/resumeSDK/resume.docx"  //替换为您的简历
+    testParser(url, uid, pwd, fname) 
 }
